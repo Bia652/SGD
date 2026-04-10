@@ -1,0 +1,18 @@
+# 
+# Sistema de Gestão de Dados 2024/2025
+# Trabalho Prático
+#
+# Authors: 
+#   SGD 2024 Team
+#   University of Coimbra
+
+FROM library/postgres
+
+
+ENV POSTGRES_USER project
+ENV POSTGRES_PASSWORD project
+ENV POSTGRES_DB projectSGD
+
+COPY SGD2024_data.sql /docker-entrypoint-initdb.d/
+
+EXPOSE 5432
